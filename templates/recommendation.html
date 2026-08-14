@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Recommendations - CrowdFlow AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        CrowdFlow AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/predict">Predict</a>
+        <a href="/insights">Insights</a>
+        <a href="/recommendation">Recommendation</a>
+    </div>
+
+</nav>
+
+
+<main class="recommendation-page">
+
+    <section class="prediction-header">
+
+        <p class="eyebrow">
+            SMART TRAVEL
+        </p>
+
+        <h1>
+            Crowd-Aware Recommendations
+        </h1>
+
+        <p>
+            Review your latest passenger-demand prediction
+            and explore planned quieter-travel recommendations.
+        </p>
+
+    </section>
+
+
+    <section class="recommendation-demo">
+
+        <div class="current-journey">
+
+            <p class="insight-label">
+                CURRENT PREDICTION
+            </p>
+
+            {% if origin and destination %}
+
+                <h2>
+                    {{ origin }} → {{ destination }}
+                </h2>
+
+                <div class="demo-details">
+
+                    <div>
+                        <span>Travel Time</span>
+                        <strong>{{ selected_time }}</strong>
+                    </div>
+
+                    <div>
+                        <span>Predicted Demand</span>
+                        <strong>{{ prediction }} passengers</strong>
+                    </div>
+
+                    <div>
+                        <span>Crowding</span>
+                        <strong>{{ crowd_level }}</strong>
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <h2>
+                    No journey prediction available
+                </h2>
+
+                <p>
+                    Please create a journey prediction first.
+                </p>
+
+                <a
+                    href="/predict"
+                    class="recommendation-button"
+                >
+                    Go to Journey Prediction →
+                </a>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="recommendation-arrow">
+            →
+        </div>
+
+
+        <div class="suggested-journey">
+
+            <p class="insight-label">
+                SMART RECOMMENDATION
+            </p>
+
+            {% if crowd_level == "Low" %}
+
+                <h2>
+                    Current time looks suitable
+                </h2>
+
+                <p>
+                    Passenger demand is predicted to be relatively low.
+                    Your selected travel period may already be a good option.
+                </p>
+
+            {% elif crowd_level == "Moderate" %}
+
+                <h2>
+                    Moderate passenger demand
+                </h2>
+
+                <p>
+                    Your selected time has moderate expected demand.
+                    Travelling slightly earlier or later may provide
+                    a quieter journey.
+                </p>
+
+            {% elif crowd_level == "High" %}
+
+                <h2>
+                    Consider a quieter travel time
+                </h2>
+
+                <p>
+                    Passenger demand is predicted to be high.
+                    If your journey is flexible, consider checking
+                    a nearby departure time.
+                </p>
+
+            {% elif crowd_level == "Very High" %}
+
+                <h2>
+                    Alternative time recommended
+                </h2>
+
+                <p>
+                    Very high passenger demand is predicted.
+                    Travelling at another time may provide
+                    a more comfortable journey.
+                </p>
+
+            {% else %}
+
+                <h2>
+                    Create a prediction first
+                </h2>
+
+                <p>
+                    Smart travel guidance will appear here
+                    after a journey prediction has been generated.
+                </p>
+
+            {% endif %}
+
+
+            <div class="future-feature">
+                ✓ Compare nearby departure times
+            </div>
+
+            <div class="future-feature">
+                ✓ Identify lower-demand periods
+            </div>
+
+            <div class="future-feature">
+                ✓ Compare alternative journey options
+            </div>
+
+            <div class="future-feature">
+                ✓ Provide passenger-friendly travel advice
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="development-plan">
+
+        <p class="eyebrow">
+            NEXT DEVELOPMENT STAGE
+        </p>
+
+        <h2>
+            Planned implementation
+        </h2>
+
+        <div class="plan-grid">
+
+            <div class="plan-card">
+
+                <span>01</span>
+
+                <h3>
+                    Train Frequency
+                </h3>
+
+                <p>
+                    Integrate NUMBAT service-frequency information
+                    to improve interpretation of passenger demand.
+                </p>
+
+            </div>
+
+
+            <div class="plan-card">
+
+                <span>02</span>
+
+                <h3>
+                    Route Intelligence
+                </h3>
+
+                <p>
+                    Automatically identify relevant lines
+                    and directions for a selected journey.
+                </p>
+
+            </div>
+
+
+            <div class="plan-card">
+
+                <span>03</span>
+
+                <h3>
+                    Alternative Comparison
+                </h3>
+
+                <p>
+                    Compare predicted demand across nearby
+                    travel times and journey alternatives.
+                </p>
+
+            </div>
+
+
+            <div class="plan-card">
+
+                <span>04</span>
+
+                <h3>
+                    Model Optimisation
+                </h3>
+
+                <p>
+                    Perform additional feature engineering,
+                    tuning and evaluation to improve prediction quality.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>
+        CrowdFlow AI • Machine Learning Passenger Demand Prediction
+    </p>
+</footer>
+
+</body>
+</html>

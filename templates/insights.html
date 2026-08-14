@@ -1,0 +1,254 @@
+<nav class="navbar">
+
+    <div class="logo">
+        CrowdFlow AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/predict">Predict</a>
+        <a href="/insights">Insights</a>
+        <a href="/recommendation">Recommendation</a>
+    </div>
+
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insights - CrowdFlow AI</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CrowdFlow AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/insights">Insights</a>
+            <a href="/recommendation">Recommendation</a>
+        </div>
+
+    </nav>
+
+
+    <main class="insights-page">
+
+        <section class="prediction-header">
+
+            <p class="eyebrow">
+                PROJECT ANALYTICS
+            </p>
+
+            <h1>
+                CrowdFlow AI Insights
+            </h1>
+
+            <p>
+                Overview of the transport dataset,
+                machine-learning model and current
+                prototype performance.
+            </p>
+
+        </section>
+
+
+        <section class="insight-grid">
+
+            <div class="insight-card">
+
+                <p class="insight-label">
+                    PROCESSED DATA
+                </p>
+
+                <h2>
+                    582,720
+                </h2>
+
+                <p>
+                    NUMBAT 2025 passenger-demand records
+                    prepared for machine-learning analysis.
+                </p>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <p class="insight-label">
+                    TIME RESOLUTION
+                </p>
+
+                <h2>
+                    15 Minutes
+                </h2>
+
+                <p>
+                    Passenger-demand observations are
+                    analysed using quarter-hour travel intervals.
+                </p>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <p class="insight-label">
+                    DAY TYPES
+                </p>
+
+                <h2>
+                    5
+                </h2>
+
+                <p>
+                    Monday, Tuesday–Thursday,
+                    Friday, Saturday and Sunday.
+                </p>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <p class="insight-label">
+                    MODEL
+                </p>
+
+                <h2>
+                    Random Forest
+                </h2>
+
+                <p>
+                    Regression model trained to estimate
+                    passenger demand from journey features.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="model-section">
+
+            <div class="model-card">
+
+                <p class="eyebrow">
+                    CURRENT MODEL PERFORMANCE
+                </p>
+
+                <h2>
+                    Prototype Evaluation
+                </h2>
+
+
+                <div class="metric-grid">
+
+                    <div class="metric">
+                        <strong>0.594</strong>
+                        <span>R² Score</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>146.34</strong>
+                        <span>MAE</span>
+                    </div>
+
+                    <div class="metric">
+                        <strong>293.75</strong>
+                        <span>RMSE</span>
+                    </div>
+
+                </div>
+
+
+                <p class="model-note">
+                    These results represent the current
+                    baseline prototype. Further feature
+                    engineering and model optimisation
+                    are planned as future development.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="pipeline-section">
+
+            <p class="eyebrow">
+                SYSTEM PIPELINE
+            </p>
+
+            <h2>
+                From TfL data to passenger prediction
+            </h2>
+
+
+            <div class="pipeline">
+
+                <div class="pipeline-box">
+                    TfL NUMBAT 2025
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Data Processing
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Random Forest
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Flask Application
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Crowd Prediction
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            CrowdFlow AI • TfL NUMBAT 2025 • Machine Learning Prototype
+        </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CrowdFlow AI Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CrowdFlow AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/predict">Predict</a>
+            <a href="/insights">Insights</a>
+            <a href="/recommendation">Recommendation</a>
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-page">
+
+        <section class="dashboard-hero">
+
+            <p class="eyebrow">
+                AI-POWERED TRANSPORT INTELLIGENCE
+            </p>
+
+            <h1>
+                Predict London Crowding
+                <span>Before You Travel</span>
+            </h1>
+
+            <p class="dashboard-description">
+                A machine-learning passenger demand prediction
+                prototype using TfL NUMBAT 2025 data to help
+                travellers understand expected crowd levels
+                before travelling.
+            </p>
+
+            <a
+                href="/predict"
+                class="primary-button"
+            >
+                Start Journey Prediction
+            </a>
+
+        </section>
+
+
+        <section class="dashboard-overview">
+
+            <div class="dashboard-stat">
+                <strong>582,720</strong>
+                <span>Processed NUMBAT Records</span>
+            </div>
+
+            <div class="dashboard-stat">
+                <strong>15 min</strong>
+                <span>Prediction Intervals</span>
+            </div>
+
+            <div class="dashboard-stat">
+                <strong>0.594</strong>
+                <span>Current R² Score</span>
+            </div>
+
+            <div class="dashboard-stat">
+                <strong>Random Forest</strong>
+                <span>Machine Learning Model</span>
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-tools">
+
+            <div class="section-heading">
+
+                
+
+                <h2>
+                    Explore the project
+                </h2>
+
+                <p>
+                    Access the working prediction system,
+                    model insights and planned recommendation module.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card-grid">
+
+                <a
+                    href="/predict"
+                    class="dashboard-card"
+                >
+
+                    <div class="dashboard-card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Journey Prediction
+                    </h3>
+
+                    <p>
+                        Enter your origin, destination,
+                        travel day and time to estimate
+                        passenger demand.
+                    </p>
+
+                    <span class="dashboard-status working">
+                        WORKING
+                    </span>
+
+                    <div class="dashboard-link">
+                        Open Prediction →
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="/insights"
+                    class="dashboard-card"
+                >
+
+                    <div class="dashboard-card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Project Insights
+                    </h3>
+
+                    <p>
+                        Explore NUMBAT dataset information,
+                        machine-learning evaluation metrics
+                        and the system pipeline.
+                    </p>
+
+                    <span class="dashboard-status working">
+                        WORKING
+                    </span>
+
+                    <div class="dashboard-link">
+                        View Insights →
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="/recommendation"
+                    class="dashboard-card"
+                >
+
+                    <div class="dashboard-card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Smart Recommendation
+                    </h3>
+
+                    <p>
+                        Planned module for comparing passenger
+                        demand and recommending potentially
+                        quieter travel options.
+                    </p>
+
+                    <span class="dashboard-status development">
+                        IN DEVELOPMENT
+                    </span>
+
+                    <div class="dashboard-link">
+                        View Future Work →
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-pipeline">
+
+            <p class="eyebrow">
+                END-TO-END PIPELINE
+            </p>
+
+            <h2>
+                How CrowdFlow AI works
+            </h2>
+
+            <div class="pipeline">
+
+                <div class="pipeline-box">
+                    TfL NUMBAT 2025
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Data Processing
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Random Forest
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Flask
+                </div>
+
+                <div class="pipeline-arrow">
+                    →
+                </div>
+
+                <div class="pipeline-box">
+                    Crowd Prediction
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            CrowdFlow AI • TfL NUMBAT 2025 • Machine Learning Prototype
+        </p>
+    </footer>
+
+</body>
+
+</html>

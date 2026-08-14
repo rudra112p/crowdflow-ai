@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CrowdFlow AI - Passenger Demand Prediction</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            CrowdFlow AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/predict">Predict</a>
+            <a href="/insights">Insights</a>
+            <a href="/recommendation">Recommendation</a>
+        </div>
+
+    </nav>
+
+
+    <main class="prediction-page">
+
+        <section class="prediction-header">
+
+            <p class="eyebrow">
+                AI JOURNEY ANALYSIS
+            </p>
+
+            <h1>
+                Passenger Demand Prediction
+            </h1>
+
+            <p>
+                Enter your journey details to estimate
+                passenger demand for your selected
+                travel period.
+            </p>
+
+        </section>
+
+
+        <section class="prediction-layout">
+
+            <div class="form-card">
+
+                <h2>
+                    Journey Details
+                </h2>
+
+                <form method="POST" action="/predict">
+
+                    <div class="form-group">
+
+                        <label for="origin">
+                            Origin Station
+                        </label>
+
+                        <input
+                            type="text"
+                            id="origin"
+                            name="origin"
+                            placeholder="e.g. Oxford Circus"
+                            value="{{ origin }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="destination">
+                            Destination Station
+                        </label>
+
+                        <input
+                            type="text"
+                            id="destination"
+                            name="destination"
+                            placeholder="e.g. Piccadilly Circus"
+                            value="{{ destination }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="day">
+                                Day
+                            </label>
+
+                            <select
+                                id="day"
+                                name="day"
+                                required
+                            >
+
+                                <option
+                                    value="Monday"
+                                    {% if selected_day == "Monday" %}
+                                    selected
+                                    {% endif %}
+                                >
+                                    Monday
+                                </option>
+
+                                <option
+                                    value="TWT"
+                                    {% if selected_day == "TWT" %}
+                                    selected
+                                    {% endif %}
+                                >
+                                    Tuesday
+                                </option>
+
+                                <option value="TWT">
+                                    Wednesday
+                                </option>
+
+                                <option value="TWT">
+                                    Thursday
+                                </option>
+
+                                <option
+                                    value="Friday"
+                                    {% if selected_day == "Friday" %}
+                                    selected
+                                    {% endif %}
+                                >
+                                    Friday
+                                </option>
+
+                                <option
+                                    value="Saturday"
+                                    {% if selected_day == "Saturday" %}
+                                    selected
+                                    {% endif %}
+                                >
+                                    Saturday
+                                </option>
+
+                                <option
+                                    value="Sunday"
+                                    {% if selected_day == "Sunday" %}
+                                    selected
+                                    {% endif %}
+                                >
+                                    Sunday
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="time">
+                                Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                value="{{ selected_time }}"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="predict-button"
+                    >
+                        Analyse Journey
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            {% if prediction is not none %}
+
+            <div class="result-card">
+
+                <p class="result-label">
+                    CROWD PREDICTION
+                </p>
+
+                <h2 class="crowd-title">
+                    {{ crowd_level }} Demand
+                </h2>
+
+                <div class="demand-number">
+
+                    {{ prediction|round|int }}
+
+                    <span>
+                        passengers
+                    </span>
+
+                </div>
+
+
+                <div class="crowd-indicator">
+
+                    <div
+                        class="indicator-dot
+                        {% if crowd_level == 'Low' %}
+                        low
+                        {% elif crowd_level == 'Moderate' %}
+                        moderate
+                        {% elif crowd_level == 'High' %}
+                        high
+                        {% else %}
+                        very-high
+                        {% endif %}"
+                    >
+                    </div>
+
+                    <span>
+                        {{ crowd_level }} passenger demand
+                    </span>
+
+                </div>
+
+
+                <p class="result-message">
+                    {{ message }}
+                </p>
+
+
+                <div class="advice-box">
+
+                    <strong>
+                        Travel Insight
+                    </strong>
+
+                    <p>
+                        {{ advice }}
+                    </p>
+
+                </div>
+
+
+                <div class="journey-summary">
+
+                    <div>
+                        <span>
+                            Journey
+                        </span>
+
+                        <strong>
+                            {{ origin }} → {{ destination }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Selected Time
+                        </span>
+
+                        <strong>
+                            {{ selected_time }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Model Interval
+                        </span>
+
+                        <strong>
+                            {{ time_slot }}
+                        </strong>
+                    </div>
+
+                </div>
+                                <a
+                    href="{{ url_for(
+                        'recommendation',
+                        origin=origin,
+                        destination=destination,
+                        time=selected_time,
+                        prediction=prediction,
+                        crowd_level=crowd_level
+                    ) }}"
+                    class="recommendation-button"
+                >
+                    View Smart Recommendation →
+                </a>
+                 
+                <p class="prototype-note">
+                    Crowd categories are prototype classifications
+                    derived from passenger-demand patterns and are
+                    not official TfL crowding classifications.
+                </p>
+
+            </div>
+
+
+            {% else %}
+
+            <div class="result-placeholder">
+
+                <div class="placeholder-icon">
+                    AI
+                </div>
+
+                <h2>
+                    Your prediction will appear here
+                </h2>
+
+                <p>
+                    Complete the journey form and
+                    CrowdFlow AI will analyse the
+                    selected travel period.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            CrowdFlow AI • TfL NUMBAT 2025 • Machine Learning Prototype
+        </p>
+    </footer>
+
+</body>
+
+</html>
