@@ -91,3 +91,16 @@ CrowdFlow AI follows a simple end-to-end machine learning workflow:
 ### System Flow
 
 `User → Flask Web Application → Input Preprocessing → Random Forest Model → Passenger Demand Prediction → Crowd Level → Travel Guidance`
+## 🖥️ Application Screenshots
+
+### CrowdFlow AI Dashboard
+
+The dashboard introduces the CrowdFlow AI passenger demand prediction system and provides access to the prediction and analysis features.
+
+![CrowdFlow AI Dashboard](screenshots/crowdflow-home.png)
+
+### Journey Prediction
+
+Users can enter their origin, destination, day and travel time to generate a passenger demand prediction and crowd-level assessment.
+
+![CrowdFlow AI Journey Prediction](screenshots/crowdflow-prediction.png)
