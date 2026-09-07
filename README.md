@@ -104,3 +104,32 @@ The dashboard introduces the CrowdFlow AI passenger demand prediction system and
 Users can enter their origin, destination, day and travel time to generate a passenger demand prediction and crowd-level assessment.
 
 ![CrowdFlow AI Journey Prediction](screenshots/crowdflow-prediction.png)
+
+
+## 📁 Project Structure
+
+```text
+CrowdFlow-AI/
+│
+├── data/
+│   ├── inspect_data.py
+│   ├── inspect_numbat.py
+│   └── prepare_numbat.py
+│
+├── models/
+│   ├── compress_model.py
+│   ├── random_forest_model.pkl
+│   ├── test_model.py
+│   └── train_model.py
+│
+├── screenshots/
+│
+├── static/
+│   └── css/
+│
+├── templates/
+│
+├── app.py
+├── requirements.txt
+├── .gitignore
+└── README.md
