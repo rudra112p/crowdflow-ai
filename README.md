@@ -13,6 +13,7 @@ Users can enter their journey details through a Flask-based web interface and re
 - 💡 Travel guidance based on predicted demand
 
 ## 🔗 Live Project
+> **Note:** This project is hosted on Render's free tier. The live demo may take approximately 30–60 seconds to start after a period of inactivity.
 
 **Live Demo:** https://crowdflow-ai-8f85.onrender.com
 
