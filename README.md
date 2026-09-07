@@ -200,3 +200,15 @@ CrowdFlow AI is a functional prototype developed using historical TfL passenger 
 - Train and evaluate models using larger datasets and greater computing resources.
 - Incorporate additional features such as weather, events and service disruptions.
 - Improve the user interface and provide richer passenger-demand visualisations.
+
+- ## 👨‍💻 Author
+
+**Rudra Patel**
+
+BSc (Hons) Computing with Technology graduate with an interest in software engineering, backend development and machine learning.
+
+### Connect with me
+
+- **LinkedIn:** PASTE-YOUR-LINKEDIN-URL
+- **Portfolio:** PASTE-YOUR-PORTFOLIO-URL
+- **GitHub:** https://github.com/rudra112p
