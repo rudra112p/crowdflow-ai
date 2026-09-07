@@ -39,3 +39,19 @@ Users can enter their journey details through a Flask-based web interface and re
 
 ### Data
 - **TfL NUMBAT** – Historical London public transport passenger demand data
+
+## ✨ Key Features
+
+- 🚇 **Journey-Based Prediction** – Users can select an origin station, destination station, Underground line, direction, day type and travel time.
+
+- 🤖 **Machine Learning Prediction** – Uses a trained Random Forest regression model to estimate passenger demand from historical transport data.
+
+- 👥 **Crowd Level Classification** – Converts predicted passenger demand into easy-to-understand crowd levels.
+
+- 💡 **Travel Guidance** – Provides guidance based on the predicted level of passenger demand.
+
+- 🌐 **Web-Based Interface** – Flask-based application allows predictions to be generated through a simple browser interface.
+
+- 📊 **Historical TfL Data** – Built using Transport for London NUMBAT passenger-demand data.
+
+- ☁️ **Cloud Deployment** – Application is deployed on Render and accessible online.
