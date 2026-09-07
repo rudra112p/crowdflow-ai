@@ -67,3 +67,27 @@ The Random Forest regression model was evaluated using standard regression metri
 The R² score indicates that the model explains approximately **59.4% of the variance** in passenger demand within the evaluated dataset.
 
 > Note: The model was trained on a subset of the available processed data because of local computational limitations during development.
+
+
+## ⚙️ How CrowdFlow AI Works
+
+CrowdFlow AI follows a simple end-to-end machine learning workflow:
+
+1. **Journey Input**  
+   The user provides journey information including origin station, destination station, line, direction, day type and travel time.
+
+2. **Input Preprocessing**  
+   The Flask application processes the submitted journey information and converts it into the format required by the trained machine learning model.
+
+3. **Passenger Demand Prediction**  
+   The processed input is passed to the trained **Random Forest regression model**, which generates an estimated passenger demand.
+
+4. **Crowd Classification**  
+   The predicted passenger demand is converted into a crowd level to make the result easier for passengers to understand.
+
+5. **Travel Guidance**  
+   The web application displays the predicted demand, crowd level and relevant travel guidance to the user.
+
+### System Flow
+
+`User → Flask Web Application → Input Preprocessing → Random Forest Model → Passenger Demand Prediction → Crowd Level → Travel Guidance`
