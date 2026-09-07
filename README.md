@@ -133,3 +133,51 @@ CrowdFlow-AI/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+## 🚀 Installation & Local Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rudra112p/crowdflow-ai
+cd crowdflow-ai
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+On macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the application
+
+```bash
+python app.py
+```
+
+### 5. Open the application
+
+Open your browser and visit:
+
+```text
+http://127.0.0.1:5000
+```
+
+The trained Random Forest model is loaded by the Flask application to generate passenger demand predictions.
