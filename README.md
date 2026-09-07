@@ -181,3 +181,22 @@ http://127.0.0.1:5000
 ```
 
 The trained Random Forest model is loaded by the Flask application to generate passenger demand predictions.
+
+## 🔮 Limitations & Future Improvements
+
+CrowdFlow AI is a functional prototype developed using historical TfL passenger demand data. Several improvements could extend the system further.
+
+### Current Limitations
+
+- Predictions are based on **historical TfL NUMBAT data** rather than real-time passenger information.
+- The model does not currently account for live disruptions, weather, special events or unexpected changes in passenger behaviour.
+- Due to local computational limitations during development, the Random Forest model was trained using a subset of the processed dataset.
+- The current system is intended as a decision-support prototype rather than a real-time TfL journey planning service.
+
+### Future Improvements
+
+- Integrate real-time TfL transport and disruption data.
+- Explore additional machine learning models and hyperparameter optimisation.
+- Train and evaluate models using larger datasets and greater computing resources.
+- Incorporate additional features such as weather, events and service disruptions.
+- Improve the user interface and provide richer passenger-demand visualisations.
