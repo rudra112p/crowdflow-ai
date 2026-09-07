@@ -55,3 +55,15 @@ Users can enter their journey details through a Flask-based web interface and re
 - 📊 **Historical TfL Data** – Built using Transport for London NUMBAT passenger-demand data.
 
 - ☁️ **Cloud Deployment** – Application is deployed on Render and accessible online.
+
+## 📈 Model Performance
+
+The Random Forest regression model was evaluated using standard regression metrics:
+
+- **R² Score:** 0.594
+- **Mean Absolute Error (MAE):** 146.34 passengers
+- **Root Mean Squared Error (RMSE):** 293.75 passengers
+
+The R² score indicates that the model explains approximately **59.4% of the variance** in passenger demand within the evaluated dataset.
+
+> Note: The model was trained on a subset of the available processed data because of local computational limitations during development.
